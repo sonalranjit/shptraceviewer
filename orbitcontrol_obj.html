@@ -24,6 +24,7 @@
             gui.add(camera.position, 'y', -100,100).step(5);
             gui.add(camera.position, 'z', -100,100).step(5);
         }
+
         //Sets up the scene
         function init(){
 
@@ -61,7 +62,7 @@
 
             //Load the mesh and add it to the scene
             var loader = new THREE.JSONLoader();
-            loader.load("models/corr_undecimated.json", function (geometry){
+            loader.load("models/stairs.json", function (geometry){
                 var material = new THREE.MeshLambertMaterial({color: 0x55B663});
                 mesh = new THREE.Mesh(geometry,material);
                 scene.add(mesh);
