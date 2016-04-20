@@ -8,6 +8,7 @@
 <body style="margin: 0;">
     <script src="js/three.min.js"></script>
     <script src="js/OrbitControls.js"></script>
+    <script src="js/DAT.GUI.js"></script>
     <script>
         //Code for display
         // Set up the scene, camera, and renderer as global variables.
@@ -16,6 +17,13 @@
         init();
         animate();
 
+        //setup gui
+        function addDatGUI(){
+            var gui = new DAT.GUI();
+            gui.add(camera.position, 'x', -100,100).step(5);
+            gui.add(camera.position, 'y', -100,100).step(5);
+            gui.add(camera.position, 'z', -100,100).step(5);
+        }
         //Sets up the scene
         function init(){
 
@@ -61,6 +69,8 @@
 
             // Add OrbitControls so that we can pan around with the mouse
             controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+            addDatGUI();
 
         }
 
