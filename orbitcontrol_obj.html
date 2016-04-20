@@ -31,7 +31,7 @@
 
             //Create a camera, zoom it out from the model a bit, and add it to the scene.
             camera = new THREE.PerspectiveCamera(45, WIDTH / HEIGHT,0.1, 20000); //45 degree angle, aspect ratio, draw distance near, far
-            camera.position(0,6,0);
+            camera.position.set(0,6,0);
             scene.add(camera);
 
             //Create an event listener that resizes the renderer with the browser window
@@ -44,19 +44,19 @@
             });
 
             // set background color of the scene
-            renderer.setClearColorHex(0x333F47, 1);
+            renderer.setClearColor(0x333F47, 1);
 
             //Create a light, set its position, and add it to the scene
             var light =  new THREE.PointLight(0xffffff);
             light.position.set(-100,200,100);
-            scene.addLight(light);
+            scene.add(light);
 
             //Load the mesh and add it to the scene
             var loader = new THREE.JSONLoader();
-            loader.load("models/treehouse_logo.js", function (geometry){
+            loader.load("models/corr_undecimated.json", function (geometry){
                 var material = new THREE.MeshLambertMaterial({color: 0x55B663});
                 mesh = new THREE.Mesh(geometry,material);
-                scene.addMesh(mesh);
+                scene.add(mesh);
             });
 
             // Add OrbitControls so that we can pan around with the mouse
