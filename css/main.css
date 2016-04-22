@@ -1,0 +1,69 @@
+html, body {
+    height: 100%;
+    margin:0;
+    overflow:hidden;
+}
+
+.navbar-toggle {
+    float: right;
+    margin-left: 15px;
+}
+
+.navmenu {
+    z-index: 1;
+}
+.project
+{
+    position:absolute;
+    left:15px;
+    top:-15px;
+    z-index:1;
+}
+.canvas {
+    position: relative;
+    left: 0;
+    z-index: 2;
+    min-height: 100%;
+    padding: 50px 0 0 0;
+    background: #fff;
+}
+
+@media (min-width: 0) {
+    .navbar-toggle {
+        display: block; /* force showing the toggle */
+    }
+}
+
+@media (min-width: 2000px) {
+    body {
+        padding: 0;
+        margin:0;
+        overflow:hidden;
+    }
+    .navbar {
+        right: auto;
+        background-color: transparent;
+        border: none;
+    }
+    .navbar-default {
+        background-color: transparent;
+        border-color: transparent;
+    }
+    .canvas {
+        padding: 0;
+    }
+}
+.styled-select {
+    background: transparent;
+    width: 90%;
+    padding: 5px;
+    padding-left: 13px;
+    margin-top: 5px;
+    color: red;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    height: 34px;
+    -webkit-appearance: none;
+}

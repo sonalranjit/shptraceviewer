@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Treehouse Logo in three.js</title>
+    <title>Shapetrace 3D model viewer three.js</title>
 
 </head>
 <body style="margin: 0;">
     <script src="js/three.min.js"></script>
     <script src="js/OrbitControls.js"></script>
     <script src="js/DAT.GUI.js"></script>
+    <script src="js/stats.min.js"></script>
     <script>
         //Code for display
         // Set up the scene, camera, and renderer as global variables.
-        var scene, camera, renderer;
-
+        var scene, camera, renderer, Stats;
         init();
         animate();
 
@@ -56,7 +56,7 @@
             renderer.setClearColor(0x333F47, 1);
 
             //Create a light, set its position, and add it to the scene
-            var light =  new THREE.PointLight(0xffffff);
+            var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
             light.position.set(-100,200,100);
             scene.add(light);
 
