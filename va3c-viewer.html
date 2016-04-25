@@ -10,10 +10,12 @@
     <script src="js/TrackballControls.js"></script>
     <script src="js/stats.min.js"></script>
     <script src="js/DAT.GUI.js"></script>
+    <!--script src="js/va3c-viewer.js"></script-->
+    <script src="js/Projector.js"></script>
+    <script src="js/shapetraceviewer.js"></script>
     <!--script src=sun-position.js ></script-->
     <script src="js/OrbitControls.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css">
-
 
   </head>
 
@@ -23,28 +25,9 @@
       <a class="navmenu-brand" href="http://va3c.github.io/" >va3c Viewer</a>
       <ul class="nav navmenu-nav">
         <li style="padding-top:25px;padding-left:13px;"><b>Objects</b></li>
-        <li><a href='' onclick="loadJS('models/corr237_April!8_2016.js')">Example 1</a></li>
-        <li><a href='' onclick="loadJS('../json/revit/rac_basic_sample_project.rvt.js')">Revit Complex</a></li>
-        <li><a href='' onclick="loadJS('../json/TypTower.json')">Grasshopper Simple</a></li>
-        <li><a href='' onclick="loadJS('../json/TTX.json')">Grasshopper Complex</a></li>
-        <li><a href='' onclick="loadJS('../json/3dsmax/TransamericaPyramid2.js')">3DS Max</a></li>
-        <li><a href='' onclick="loadDAE('../json/US_Capitol_Building.dae')">Sketchup</a></li>
-        <li style="padding-top:25px;padding-left:13px;"><b>CITY</b></li>
-        <li>
-            <select class="styled-select" onchange="getComboA(this);">
-			  <option value="New York">New York</option>
-			  <option value="Sao Paulo">Sao Paulo</option>
-			  <option value="Paris">Paris</option>
-			  <option value="Tokyo">Tokyo</option>
-			  <option value="Moscow">Moscow</option>
-			</select>
-        </li>
-        <li style="padding-top:25px;padding-left:13px;"><b>TIME</b></li>
-        <div style="padding-left:13px;padding-right:13px;">
-       <li style="padding-top:7px;">Month 1-12<input type="range" name="points" id="month" min="1" max="12" step="1" value="5" onchange="updateLight()"></li>
-       <li style="padding-top:7px;">Day 1-31<input type="range" name="points" id="day" min="1" max="31" step="1" value="18" onchange="updateLight()"></li>
-       <li style="padding-top:7px;">Hour 0-24<input type="range" name="points" id="hour" min="1" max="24" step="1" value="24" onchange="updateLight()"></li>
-       </div>
+        <li><a href='' onclick="loadJS('models/treehouse.js')">Example 1</a></li>
+
+
        <li style="padding-top:25px;padding-left:13px;"><b>CAMERA</b></li>
         <li><a href='' onclick="resetCamera()">Reset View</a></li>
         <li><a href='' onclick="zoomExtents()">Zoom Extents</a></li>
@@ -52,12 +35,13 @@
     </div>
 
     <div>
-    <script>
-        var fname = '../json/Hex_01.js';
-    	init(fname);
-    	animate();
-    </script>
+      <script>
+        var fname = 'models/stairs_blender.json';
+        init(fname);
+        animate();
+      </script>
     </div>
+
     
     <div class="canvas">
       <div style="background-color: transparent;border-color: transparent;" class="navbar navbar-default navbar-fixed-top">
