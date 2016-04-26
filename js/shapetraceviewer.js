@@ -66,14 +66,6 @@
         animate();
     }
 
-    function clearObj(){
-        var l = scene.children.length;
-        while(l--) {
-            if (scene.children[l] instanceof THREE.Camera) continue;
-            scene.remove(scene.children[l]);
-        }
-    }
-
     function removeLastObj(){
         var allChildren = scene.children;
         var lastObject = allChildren[allChildren.length-1];
