@@ -22,10 +22,10 @@
   <body>
     
     <div class="navmenu navmenu-default navmenu-fixed-right offcanvas">
-      <a class="navmenu-brand" href="http://va3c.github.io/" >va3c Viewer</a>
+      <a class="navmenu-brand" href="http://va3c.github.io/" >Shapetrace 3D model Viewer</a>
       <ul class="nav navmenu-nav">
         <li style="padding-top:25px;padding-left:13px;"><b>Objects</b></li>
-        <li><a href='' onclick="loadJS('models/treehouse.js')">Example 1</a></li>
+        <li><a href='' onclick="loadJS('models/treehouse_logo.js');event.preventDefault();">Example 1</a></li>
 
 
        <li style="padding-top:25px;padding-left:13px;"><b>CAMERA</b></li>
@@ -36,7 +36,7 @@
 
     <div>
       <script>
-        var fname = 'models/stairs_blender.json';
+        var fname = 'models/treehouse_logo.js';
         init(fname);
         animate();
       </script>
@@ -45,7 +45,7 @@
     
     <div class="canvas">
       <div style="background-color: transparent;border-color: transparent;" class="navbar navbar-default navbar-fixed-top">
-        <h1 class="project"><b>va3c viewer</b></h1> 
+        <h1 class="project"><b>Shapetrace 3D Model Viewer </b></h1>
         <button style="background-color: rgb(240,240,240);" type="button" class="navbar-toggle expand" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
