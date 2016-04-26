@@ -7,7 +7,7 @@ init();
 animate();
 var targetlist = [];
 //Sets up the scene
-function init(fname){
+function init(path){
 
     //Create the scene and set the screen size
     scene = new THREE.Scene();
@@ -45,7 +45,7 @@ function init(fname){
     // Add OrbitControls so that we can pan around with the mouse
     controls = new THREE.OrbitControls(camera, renderer.domElement);
 
-    loadJS(fname);
+    loadJS(path);
 }
 
 function animate(){
@@ -58,12 +58,12 @@ function animate(){
 }
 
 //Load function to add it to the scene
-function loadJS(fname){
-    alert(fname);
+function loadJS(path){
+    alert(path);
     if (scene) scene.remove(obj);
-    targetList = [];
+    targetlist = [];
     var loader = new THREE.JSONLoader();
-    loader.load(fname, function (geometry){
+    loader.load(path, function (geometry){
         var material = new THREE.MeshLambertMaterial({color: 0x55B663});
         mesh = new THREE.Mesh(geometry,material);
         scene.add(mesh);
