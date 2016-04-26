@@ -56,20 +56,29 @@
 
     //Load function to add it to the scene
     function loadJS(path){
-        if (scene) clearObj();
+        if (scene) removeLastObj();
         var loader = new THREE.JSONLoader();
         loader.load(path, function (geometry){
             var material = new THREE.MeshLambertMaterial({color: 0x55B663});
             mesh = new THREE.Mesh(geometry,material);
             scene.add(mesh);
         });
+        animate();
     }
 
     function clearObj(){
         var l = scene.children.length;
-        while(l--){
-            if(scene.children[l] instanceof THREE.Camera) continue;
+        while(l--) {
+            if (scene.children[l] instanceof THREE.Camera) continue;
             scene.remove(scene.children[l]);
         }
+    }
 
+    function removeLastObj(){
+        var allChildren = scene.children;
+        var lastObject = allChildren[allChildren.length-1];
+        if (lastObject instanceof THREE.Mesh){
+            scene.remove(lastObject);
+
+        }
     }
