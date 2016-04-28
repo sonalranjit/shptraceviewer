@@ -33,6 +33,13 @@
         // set background color of the scene
         renderer.setClearColor(0xffffff, 1);
 
+        //stats
+        stats = new Stats();
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.bottom = '0px';
+        stats.domElement.style.zIndex = 10;
+        document.body.appendChild(stats.domElement);
+
         //Create a light, set its position, and add it to the scene
         var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
         light.position.set(-100,200,100);
@@ -52,6 +59,7 @@
         //render the scene
         renderer.render(scene,camera);
         controls.update();
+        stats.update();
     }
 
     //Load function to add it to the scene
@@ -64,6 +72,10 @@
             scene.add(mesh);
         });
         animate();
+    }
+
+    function loadOBJ(){
+
     }
 
     function removeLastObj(){
